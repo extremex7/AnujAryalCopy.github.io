@@ -1,0 +1,39 @@
+@charset "ISO-8859-1";
+.headings {
+	background-color: #F0F0F0;
+	color: #A4A400;
+}
+#pie-title {
+	font: 22pt !important;
+}
+
+body {
+	background-image: url(silverware.jpg);
+	font-size: 18px;
+}
+
+h3 {
+	background-color: #F0F0F0;
+	color: #A4A400;
+	font: 18pt;
+}
+
+h1 {
+	font: 22pt;
+	text-align: center;
+	text-decoration: underline;
+	font-family: Garamond;
+}
+.text {
+	color: #404040;
+	font: 11pt;
+	font-family: Georgia;
+}
+ul {
+	list-style-image: url(pie_icon.gif);
+}
+
+blockquote {
+	background-color: #FFFFA8;
+	font-style: italic;
+}
