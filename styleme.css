@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+#about-title {
+	color: blue;
+	font: Verdana;
+}
+#classes-title {
+	color: blue;
+	font: arial;
+}
+#movies-watched {
+	color: blue;
+	font: times new roman;
+}
