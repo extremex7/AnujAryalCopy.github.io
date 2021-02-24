@@ -8,7 +8,7 @@
 }
 
 body {
-	background-image: url(silverware.jpg);
+	background-image: url(..\images\silverware.jpg);
 	font-size: 18px;
 }
 
@@ -30,7 +30,7 @@ h1 {
 	font-family: Georgia;
 }
 ul {
-	list-style-image: url(pie_icon.gif);
+	list-style-image: url(..\images\pie_icon.gif);
 }
 
 blockquote {
