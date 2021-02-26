@@ -19,3 +19,8 @@ a {
 button {
 	background-color: pink;
 }
+
+#back-icon {
+	width: 14px;
+	height: 14px;
+}
