@@ -1,0 +1,17 @@
+fieldset {
+	background-color: #e0e0ff;
+	border-style: outset;
+	border-radius: 10pt;
+    width: fit-content;	
+}
+
+legend {
+	border-width: 2pt;
+	border-style: outset;
+	background-color: white;
+}
+
+a {
+	color: red;
+	text-decoration: none;
+}

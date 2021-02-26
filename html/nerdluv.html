@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NerdLuv SignUp</title>
+	<link rel="stylesheet" href="..\css\nerdluv.css"/>		
+</head>
+<body>
+	<form>
+		<fieldset>
+			<LEGEND>New User Signup:</LEGEND>
+			<table>
+				<tr>
+					<td><label for="name">Name:</label></td>
+					<td><input size="16" type="text" id="name"></td>
+				</tr>
+
+				<tr>
+					<td><label for="gender">Gender:</label></td>
+					<td><input type="radio" id="male" name="gender" value="male">
+					<label for="male">Male</label>
+					<input type="radio" id="female" name="gender" value="female" checked="true">
+					<label for="female">Female</label></td>
+				</tr>
+
+				<tr>
+					<td><label for="age">Age: </label></td>
+					<td><input size="6" type="text" id="age" name="age"></td>
+				</tr>
+
+				<tr>
+					<td><label for="personality">Personality type: </label></td>
+					<td>
+						<input size="6" type="text" id="personality" name="personality">
+						<a href="http://www.humanmetrics.com/cgi-win/jtypes2.asp">(Don't know your personality type?)</a>
+					</td>
+				</tr>
+
+				<tr>
+					<td><label for="os">Favorite OS:</label></td>
+					<td><select name="dropdown">
+						<option value="Windows" selected="">Windows</option>
+						<option value="Linux">Linux</option>
+						<option value="Mac">Mac</option>
+					</select></td>
+				</tr>
+
+				<tr>
+					<td><label for="seeking">Seeking Age:</label></td>
+					<td><input size="6" type="text" id="low-age" name="low-age" placeholder="min">to
+					<input size="6" type="text" id="high-age" name="high-age" placeholder="max"></td>
+				</tr>
+
+				<tr>
+					<td><button>Sign Up</button></td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
