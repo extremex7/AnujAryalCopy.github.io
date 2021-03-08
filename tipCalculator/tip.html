@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <head>
 	<title>Tip Calculator</title>
+	<script type="text/javascript" src="./tip.js"></script>
+	<link rel="stylesheet" href="./tip.css" />
 </head>
 <body>
+	<h1>
+		<img src="../images/calc.jpg">
+		<span>Tip Calculator</span>
+	</h1>
+
 	<input type="number" id="subTotal" name="subTotal" value="">
 	<label>$ Subtotal</label><br><br>
 
 
 	<input type="number" id="tip" name="tip" value="">
-	<label>$ Tip</label><br><br>
+	<label>% Tip</label><br><br>
 
 
 
@@ -16,18 +23,7 @@
 
 	<hr>
 
-	<h3>Your Total: </h3>
-
-	<p id="output"></p>
-
-	<script type="text/javascript">
-		function calcTip() {
-			var v1 = document.getElementById("subTotal").value;
-			var v2 = document.getElementById("tip").value;
-			var o = parseInt(v1) + parseInt(v2);
-			document.getElementById("output").innerHTML= o;
-		}
-	</script>
+	<h3>Your Total: $ <span id="output"></span></h3>
 </body>
 
 
