@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+	<title>Tip Calculator</title>
+</head>
+<body>
+	<input type="number" id="subTotal" name="subTotal" value="">
+	<label>$ Subtotal</label><br><br>
+
+
+	<input type="number" id="tip" name="tip" value="">
+	<label>$ Tip</label><br><br>
+
+
+
+	<button onclick="calcTip()">Calculate Tip</button><br><br>
+
+	<hr>
+
+	<h3>Your Total: </h3>
+
+	<p id="output"></p>
+
+	<script type="text/javascript">
+		function calcTip() {
+			var v1 = document.getElementById("subTotal").value;
+			var v2 = document.getElementById("tip").value;
+			var o = parseInt(v1) + parseInt(v2);
+			document.getElementById("output").innerHTML= o;
+		}
+	</script>
+</body>
+
+
