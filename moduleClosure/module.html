@@ -2,10 +2,27 @@
 <html>
     <head>
         <title>Module Lab</title>
-        <script src="./module.js" type="text/javascript"></script>
     </head>
     <body>
-        <p id="output"></p>
+        <textarea id="output"></textarea><br>
         <button onclick="rudyTimer()">Click me!</button>
     </body>
+
+    <script>
+        var rudyTimer = (function() {
+            timer = null;// stores ID of interval timer 
+            function delayMsg2(){
+                if(timer === null){
+                    timer = setInterval(rudy, 1000);
+                } else{
+                    clearInterval(timer);
+                    timer = null;
+                }
+            }
+            function rudy(){// called each time the timer goes off
+                document.getElementById("output").innerHTML = " Rudy!";
+            }
+            delayMsg2();
+        });
+    </script>
 </html>
