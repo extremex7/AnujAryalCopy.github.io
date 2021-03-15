@@ -8,16 +8,15 @@ window.onload = function(){
     $("#puzzlearea div").hover(function(){
         if(isMovable($(this))){
             $(this).addClass("movablepiece");
-            $(this).click(function(){
-                //check if adjacent div is empty and check move it to empty one
-                move($(this));
-            });
         }
     }, function(){
-        if(isMovable($(this))){
             $(this).removeClass("movablepiece");
-        }  
     });
+    $("#puzzlearea div").click(function(){
+        if($(this).hasClass("movablepiece"))
+            move($(this));
+    });
+   
 }
 
 function emptyDiv(a, b){
@@ -52,7 +51,7 @@ function init() {
 
 function shuffle(){
     // write efficient algorithm later
-    
+    console.log($("puzzlearea"));
 }
 
 
@@ -82,7 +81,6 @@ function move(div){
     } else {
         moveUp(div);
     }
-    div.removeClass("movablepiece");
 }
 
 function moveLeft(div){
