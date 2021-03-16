@@ -1,4 +1,6 @@
 var empty = new emptyDiv(300, 300);
+var moves = 0;
+
 window.onload = function(){
     init();
     
@@ -13,8 +15,10 @@ window.onload = function(){
             $(this).removeClass("movablepiece");
     });
     $("#puzzlearea div").click(function(){
-        if($(this).hasClass("movablepiece"))
+        if($(this).hasClass("movablepiece")){
+            moves += 1;
             move($(this));
+        }      
     });
    
 }
@@ -38,6 +42,7 @@ function init() {
 
         // set basic style and background
         div.className = "puzzlepiece";
+        div.id = x + 10*y;
         div.style.left = x + 'px';
         div.style.top = y + 'px';
         div.style.backgroundImage = 'url("background.jpg")';
@@ -50,8 +55,21 @@ function init() {
 }
 
 function shuffle(){
-    // write efficient algorithm later
-    console.log($("puzzlearea"));
+    var count = 0;
+    do {
+        shuffleHelper();
+        count++;
+    } while(count != 50);
+}
+
+function shuffleHelper(){
+    var divs = [];
+    $("#puzzlearea div").each(function(){
+        if(isMovable($(this)))
+            divs.push($(this));
+    });
+    var rand = parseInt(Math.random()*divs.length);
+    move(divs[rand]);
 }
 
 
@@ -81,6 +99,9 @@ function move(div){
     } else {
         moveUp(div);
     }
+    if(isSolution()){
+        alert("You Win in " + moves  + " moves");
+    }
 }
 
 function moveLeft(div){
@@ -109,4 +130,18 @@ function moveDown(div){
         div.css('top', (parseInt(div.css('top'))+100 + 'px'));
         empty.top -= 100;
     } 
+}
+
+function isSolution(){
+    var bool = true;
+    $("#puzzlearea div").each(function(){
+            var x = parseInt($(this).css('left')); 
+            var y = parseInt($(this).css('top'));
+            
+            if(x + 10*y - parseInt($(this).attr('id'))!=0)
+                bool = false;
+            else 
+                bool = (bool==false) ? false : true;
+    });
+    return bool;
 }
