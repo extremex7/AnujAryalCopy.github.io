@@ -46,3 +46,7 @@ body, button {
 .invalid {
 	background-color: #f88;
 }
+
+#w3c {
+	text-align: right;
+}
