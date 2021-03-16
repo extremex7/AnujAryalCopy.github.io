@@ -1,26 +1,29 @@
 var empty = new emptyDiv(300, 300);
 var moves = 0;
+var gameStarted = false;
 
 window.onload = function(){
     init();
     
     $('#shufflebutton').click(function(){
         shuffle();
-    });
-    $("#puzzlearea div").hover(function(){
-        if(isMovable($(this))){
-            $(this).addClass("movablepiece");
-        }
-    }, function(){
-            $(this).removeClass("movablepiece");
-    });
-    $("#puzzlearea div").click(function(){
-        if($(this).hasClass("movablepiece")){
-            moves += 1;
-            move($(this));
-        }      
-    });
-   
+        gameStarted = true;
+        if(gameStarted){
+            $("#puzzlearea div").hover(function(){
+                if(isMovable($(this))){
+                    $(this).addClass("movablepiece");
+                }
+            }, function(){
+                    $(this).removeClass("movablepiece");
+            });
+            $("#puzzlearea div").click(function(){
+                if($(this).hasClass("movablepiece")){
+                    moves += 1;
+                    move($(this));
+                }      
+            });
+        } 
+    });      
 }
 
 function emptyDiv(a, b){
@@ -99,8 +102,10 @@ function move(div){
     } else {
         moveUp(div);
     }
-    if(isSolution()){
+    if(isSolution() && gameStarted){
         alert("You Win in " + moves  + " moves");
+        moves = 0;
+        gameStarted = false;
     }
 }
 
